@@ -1,40 +1,10 @@
-﻿Build started 15-9-2015 0:03:37.
+﻿Build started 15-9-2015 0:28:57.
      1>Project "D:\Documents\Visual Studio 2015\Projects\RayCastingEngine\RayCastingEngine\RayCastingEngine.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt Main.cpp
-         Main.cpp
-     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\utility(145): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-         d:\documents\visual studio 2015\projects\raycastingengine\raycastingengine\main.h(152): note: see reference to function template instantiation 'std::pair<float,float>::pair<double,double,void>(_Other1 &&,_Other2 &&) noexcept' being compiled
-                 with
-                 [
-                     _Other1=double,
-                     _Other2=double
-                 ]
-         d:\documents\visual studio 2015\projects\raycastingengine\raycastingengine\main.h(152): note: see reference to function template instantiation 'std::pair<float,float>::pair<double,double,void>(_Other1 &&,_Other2 &&) noexcept' being compiled
-                 with
-                 [
-                     _Other1=double,
-                     _Other2=double
-                 ]
-     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\utility(145): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-         d:\documents\visual studio 2015\projects\raycastingengine\raycastingengine\main.cpp(72): note: see reference to function template instantiation 'std::pair<float,float>::pair<int,int,void>(_Other1 &&,_Other2 &&) noexcept' being compiled
-                 with
-                 [
-                     _Other1=int,
-                     _Other2=int
-                 ]
-         d:\documents\visual studio 2015\projects\raycastingengine\raycastingengine\main.cpp(72): note: see reference to function template instantiation 'std::pair<float,float>::pair<int,int,void>(_Other1 &&,_Other2 &&) noexcept' being compiled
-                 with
-                 [
-                     _Other1=int,
-                     _Other2=int
-                 ]
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Documents\Visual Studio 2015\Projects\RayCastingEngine\Debug\RayCastingEngine.exe" /INCREMENTAL /NOLOGO opengl32.lib glu32.lib glut32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"D:\Documents\Visual Studio 2015\Projects\RayCastingEngine\Debug\RayCastingEngine.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Documents\Visual Studio 2015\Projects\RayCastingEngine\Debug\RayCastingEngine.lib" /MACHINE:X86 /FS Debug\Main.obj
-     1>LINK : warning LNK4044: unrecognized option '/FS'; ignored
+     1>Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Documents\Visual Studio 2015\Projects\RayCastingEngine\Debug\RayCastingEngine.exe" /INCREMENTAL /NOLOGO opengl32.lib glu32.lib glut32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"D:\Documents\Visual Studio 2015\Projects\RayCastingEngine\Debug\RayCastingEngine.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Documents\Visual Studio 2015\Projects\RayCastingEngine\Debug\RayCastingEngine.lib" /MACHINE:X86 Debug\Main.obj
          RayCastingEngine.vcxproj -> D:\Documents\Visual Studio 2015\Projects\RayCastingEngine\Debug\RayCastingEngine.exe
      1>Done Building Project "D:\Documents\Visual Studio 2015\Projects\RayCastingEngine\RayCastingEngine\RayCastingEngine.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:02.75
+Time Elapsed 00:00:01.03
