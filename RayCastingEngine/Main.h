@@ -1,3 +1,7 @@
+/*
+Created by Marijn Waltman
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <tuple>
@@ -32,17 +36,17 @@ typedef std::vector<boolvec> boolmat;
 const double PI = 3.14159265358979323846;
 
 // Changeable parameters
-float posX = 3.0f;
-float posY = 0.0f;
-float posZ = 3.0f;
-float angleX = 0.0f;
-float angleY = 0.0f;
+float posX = 68.78f;
+float posY = 2.12f;
+float posZ = 16.51f;
+float angleX = 287.20f;
+float angleY = -0.36f;
 const float playerHeight = 2.115275;
 const float crouchSpeed = 0.2;
 float walkingSpeed = 0.3f;
 float crouchingSpeed = 0.1f;
-int screenW = 720;
-int screenH = 540;
+int screenW = 1280;
+int screenH = 720;
 const float fMin = 0.5;
 const float fMax = 100.0;
 float alpha = 60.0;

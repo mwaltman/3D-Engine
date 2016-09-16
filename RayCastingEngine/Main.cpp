@@ -1,10 +1,12 @@
 /*
+Created by Marijn Waltman
+
 Goal of this project:
 
-1. Make a raycasting engine for a camera that can have any position, height, horizontal and vertical view angle, horizontal and vertical view size and total view angle. Tilting the view angle will be excluded
-2. The scenes may consist of any 3d convex polygon or 2d convex plane, where an bitmap is projected onto the plane and sides of the polygon
-3. Use Lua to make scripted cutscenes (by e.g. moving the camera)
-4. Use OpenGL for the graphics related problems
+1. Make a raycasting engine for a camera that can have any position, height, horizontal and vertical view angle, horizontal and vertical view size and total view angle. Tilting the view angle will be excluded	-> Works for singular maps, still working on connecting multiple maps
+2. The scenes may consist of any 3d convex polygon or 2d convex plane, where a bitmap is projected onto the plane and sides of the polygon																			-> Still cannot properly handle bitmaps
+3. Use Lua to make scripted cutscenes (by e.g. moving the camera)																																					-> Still learning Lua
+4. Use OpenGL for the graphics related problems																																										-> Done
 */
 
 #include "Main.h"
@@ -23,7 +25,7 @@ bool flying = false;
 bool jumping = false;
 bool inAir = false;
 bool crouching = false;
-bool showRedLine = false;
+bool showRedLine = true;
 float inAirDuration, diffY;
 float smoothY = smoothX * (float)screenW / (float)screenH;
 float newX, newZ;
@@ -65,6 +67,11 @@ void DisplayVar(char * a, bool b, char * str) {
 	strcat(str, BoolToChar(b));
 }
 
+// Writes string a to char array str
+void DisplayString(char * str, std::string a) {
+	strcpy(str, a.c_str());
+}
+
 ////////// Additional functions
 
 // Gets the ground height for the current posX and posZ values
@@ -88,7 +95,6 @@ float GetCeilingHeight(float x, float z, LevelMap * levelmap) {
 }
 
 // Retrieves the current map from the list of active maps
-// TODO: change this
 LevelMap * GetCurrentMap(float x, float z) {
 	return activeMaps[0];
 }
@@ -259,7 +265,7 @@ void CheckInputs() {
 		speed = walkingSpeed;
 	Move(speed, 180.0 - 90.0 * direction.first + 45.0 * direction.first * direction.second - 180.0 * (((direction.second == -1 || direction.second == 0) && direction.first == 0) ? 1 : 0));
 
-	// TODO: add wall strafing
+	// TODO: add wall strafing (player now stops when making contact with slanted wall)
 	if (!flying) {
 		// Checks for collisions with walls in up, left, right and down directions
 		nH = GetGroundHeight(newX, newZ, currentMap);
@@ -557,13 +563,16 @@ void Display() {
 
 	// Draws HUD
 	glColor3f(0.5, 0.0, 0.5); // Purple
+	char controls[200], whiteLine[10];
+	DisplayString(controls, "Use WASD to walk and use the mouse to move the camera. Jump with the spacebar. Crouch with Ctrl. Fly with F. Show red line with R. Exit with Esc.");
+	DisplayString(whiteLine, "");
 	char jump[100], crouch[100], fly[100], air[100], red[100];
 	DisplayVar("Jumping = ", jumping, jump);
 	DisplayVar("Crouching = ", crouching, crouch);
-	DisplayVar("Flying = ", flying, fly);
 	DisplayVar("In Air = ", inAir, air);
+	DisplayVar("Flying = ", flying, fly);
 	DisplayVar("Red Line = ", showRedLine, red);
-	stringvec hud = { jump, crouch, fly, air, red };
+	stringvec hud = { controls, whiteLine, jump, crouch, air, fly, red };
 	DrawText2Pix(hud, 20, 20);
 
 	// Draws crosshairs
@@ -591,12 +600,10 @@ int main(int iArgc, char** cppArgv) {
 	// Creates all LevelMaps
 	LevelMap level1, level2;
 	level1 = LevelMap("Level1.txt", 0);
-	level2 = LevelMap("Level1.txt", 0);
 	activeMaps.push_back(&level1);
-	activeMaps.push_back(&level2);
 
 	// Links all LevelMaps
-	level1.AddConnection(Vector3(9, 2.5, 9), 0, &level2, Vector3(17, 0, 13), 270);
+	//level1.AddConnection(Vector3(9, 2.5, 9), 0, &level2, Vector3(17, 0, 13), 270);
 
 	// Determines the current LevelMap based on posX and posZ
 	currentMap = &level1; // GetCurrentMap(posX, posZ);
