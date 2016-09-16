@@ -5,7 +5,7 @@ A testing executable can be downloaded here:
 
 [Download engine test](https://raw.github.com/mwaltman/3D-Engine/master/Engine.Test.zip)
 
-The engine displays the map for which the coordinates are given in 'Level 1.txt'. The first line denotes *max x grid position*, *max y grid position* and *max floor/ceiling height*. All subsequent lines will denote a single tile at coordinate and is stored as *x grid position*, *y grid position*, *floor height* and *ceiling height*.
+The engine displays the map for which the coordinates are given in 'Level 1.txt'. The first line denotes *max x grid position*, *max y grid position* and *max floor/ceiling height*. All subsequent lines will denote a 'tile' and is stored as *x grid position*, *y grid position*, *floor height* and *ceiling height*.
 
 **Controls:**
 - Use W to move forwards, S to move backwards and A and D to strafe left and right.
